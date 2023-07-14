@@ -30,6 +30,14 @@ con seq aplicaría a las demás funciones core de clojure: filter, reduce, some,
 
 (map inc [1 2 3 4 5 6])
 
+(map (fn [coll]
+       (apply + coll))
+     [[1 2 3] [4 5 6] [7 8 9] [10 11 12]])
+
+;El ejemplo anterior es equivalente a esta alternativa.
+(map #(apply + %)
+     [[1 2 3] [4 5 6] [7 8 9] [10 11 12]])
+
 (map :cuenta [{:abono 1 :cargo 100 :cuenta "123456789"}
               {:abono 2 :cargo 200 :cuenta "000000000000"}
               {:abono 3 :cargo 300 :cuenta "11111111111"}

@@ -28,8 +28,31 @@
                         (every? #(% permisos-validos) permisos-usuario)))
                  set)
             false))
+(defn hay-permisos-invalidos-v3? []
+  (contains? (set (reduce (fn [inicial set-de-permisos]
+                            (let [permisos-validos? (every? #(% permisos-validos) set-de-permisos)]
+                              (if permisos-validos?
+                                (conj inicial true)
+                                (conj inicial false))))
+                          []
+                          (map :permisos usuarios))) false))
+
+;solución al ejercicio: 2) Verificar que el usuario sea ejecutivo general
 (defn es-ejecutivo-general? [registro]
   (:SIT/EJECUTIVO (:permisos registro)))
+
+;solucion1
+(first
+  (filter some?
+          (map #(when (es-ejecutivo-general? %) %)
+               usuarios)))
+
+;solucion2
+(->> usuarios
+     (map #(when (es-ejecutivo-general? %) %))
+     (filter some?)
+     first)
+
 
 (comment "Noten, los nombres de las funciones del ejemplo anterior. Terminan con signos de interrogación.
 Por lo que se entiende como si fuera una función pred que puede o no usarse dentro de funciones como:
@@ -108,5 +131,5 @@ Por lo que se entiende como si fuera una función pred que puede o no usarse den
 ;El mapa (registro) en la practica real tiene más propiedades/keys
 (obtener-observaciones-subtotal
   (conj []
-        {:id "archivo1.csv:4:1" :abono 1500 :cargo 0 :observaciones "Observación de prueba Subtotal"}
+        {:id "archivo1.csv:4:1" :abono 1500 :cargo 0 :observaciones "Observación de prueba Subtotal" :proveedor "patito"}
         {:id "archivo1.csv:3:2" :abono 240 :cargo 0 :observaciones "Observación de prueba IVA"}))

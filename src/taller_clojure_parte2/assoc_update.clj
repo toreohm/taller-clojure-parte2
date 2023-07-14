@@ -24,7 +24,7 @@ través de una función (ya existente o tu propia función).")
 
 ;ASSOC-IN/UPDATE-IN
 
-(comment "En el caso de assoc-in/update-in es lo mismo que assoc in update,
+(comment "En el caso de assoc-in/update-in es lo mismo que assoc y update,
 sólo que te permite añadir/actualizar valores en mapas anidados.")
 
 (assoc-in {:a {:b 300}} [:a :new-key] "banana")

@@ -4,12 +4,12 @@
 ;FILTER
 (comment
   "Filter regresa una nueva coll para la cual (pred item) devuelve true.
-  En este caso pred vendría siendo una función/función anónima que regresa un valor booleano.
+  En este caso pred vendría siendo una función/función anónima cuyo valor de retorno se evalua a true o a false.
   E item sería un elemento de la coll, el cual se pasa como argumento a pred.
   Filter recorre toda la coll, elemento por elemento y regresa una nueva coll con los elementos
   que \"pasen la prueba\". Recibe dos argumentos [pred coll].
 
-  Es decir, filter filtra los elementos de una coll, devolviendo una nueva coll.")
+  Es decir, filter filtra los elementos de una coll, devolviendo una nueva coll con los elementos filtrados.")
 
 ;Probar en el REPL los siguientes ejemplos
 (filter :a
@@ -39,7 +39,7 @@
 Es decir, remove regresa una nueva coll para la cual (pred item) devuelve false.
 Se puede ver esto de dos maneras:
 1) remove, remueve/quita los elementos de la coll proporcionada que SÍ pasen las prueba.
-2) remove, es un filter inverso, es decir: filtra los elementos que NO pasen la prueba.")
+2) remove, es un filter inverso, es decir: filtra los elementos que NO pasen la prueba. (No se recomienda)")
 
 ;Probar los siguientes ejemplos en el REPL
 (remove #(> % 10) [5 6 7 20 30])
@@ -63,7 +63,7 @@ Se puede ver esto de dos maneras:
 
 ;INTO
 (comment "into por su parte, acepta una coll como segundo argumento para pasar sus elementos individuales
-a la primera coll que se pasa como argumento.")
+a la primera coll que se pasa como primer argumento.")
 
 ;Checar los siguientes ejemplos en el REPL
 (into [1 2 3 4 5] [6 7])

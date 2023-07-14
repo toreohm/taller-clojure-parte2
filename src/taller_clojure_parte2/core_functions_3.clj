@@ -74,7 +74,7 @@ Si no se usa algo que compare a los elementos, clojure usaría a compare por def
 
 ;SORT-BY
 (comment "La función sort-by regresa una sequencia ordenada de los elementos en coll, el cual te permite
-aplicar una función para determinar el como ordenar los elementos de la función. A veces a la función se le llama
+aplicar una función para determinar el como ordenar los elementos de la coll. A veces a la función se le llama
 key function.")
 
 (sort-by count ["aaa" "bb" "c"])
