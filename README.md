@@ -1,36 +1,19 @@
 # taller-clojure-parte2
-
-FIXME: description
-
-## Installation
-
-Download from http://example.com/FIXME.
-
-## Usage
-
-FIXME: explanation
-
-    $ java -jar taller-clojure-parte2-0.1.0-standalone.jar [args]
-
-## Options
-
-FIXME: listing of options this app accepts.
-
-## Examples
-
-...
-
-### Bugs
-
-...
-
-### Any Other Sections
-### That You Think
-### Might be Useful
-
-## License
-
-Copyright © 2023 FIXME
-
-Distributed under the Eclipse Public License either version 1.0 or (at
-your option) any later version.
+Esta es la segunda parte del taller básico de <b>clojure</b>.<br><br>
+Puntos a tratar en este taller:<br>
+<strong>Nota:</strong> Es posible que algunos puntos se hayan explicado en la primera parte del taller. <br>
+<ul>
+<li>Core Functions</li>
+<li>map,reduce,filter,conj,concat,apply,seq</li>
+<li>¡Más funciones! take, drop, take-while, drop-while, sort, sort-by</li>
+<li>partial</li>
+<li>sequence abstraction and collection abstraction</li>
+<li>count, empty?, every?  (collection abstraction)</li>
+<li>complement</li>
+<li>Pure Functions</li>
+<li>Multi-arity functions</li>
+<li>comp</li>
+<li>Los macros →, -»</li>
+<li>assoc,update, assoc-in, update-in</li>
+<li>Resumen pra&#769;ctico</li>
+</ul>
